@@ -1,0 +1,48 @@
+PROCEDURE dot_product (T1 : ARRAY_OF FLOAT , T2 : ARRAY_OF FLOAT )
+VAR
+ps : FLOAT ;
+BEGIN
+FOR i FROM 0 TO 1 DO 
+ ps := ps + T1[i]*T2[i]
+ END_FOR
+ write( ps )
+ IF (ps == 0) THEN
+ write("the two vectors are orthogonals")
+ END_IF
+ END 
+
+ ALGORITHM dot_product
+ VAR
+ T1 : ARRAY_OF FLOAT[2];
+ T2 : ARRAY_OF FLOAT[2];
+ BEGIN
+ T1 := {1, 2}
+ T2 := {2, 1}
+
+ dot_product(T1, T2)
+
+ FUNCTION dot_product (T1 : ARRAY_OF FLOAT , T2 : ARRAY_OF FLOAT )
+VAR
+ps : FLOAT ;
+BEGIN
+FOR i FROM 0 TO 1 DO 
+ ps := ps + T1[i]*T2[i]
+ END_FOR
+  RETURN  ps 
+
+  ALGORITHM dot_product
+ VAR
+ T1 : ARRAY_OF FLOAT[2];
+ T2 : ARRAY_OF FLOAT[2];
+ product : FLOAT;
+ BEGIN
+ T1 := {1, 2}
+ T2 := {2, 1}
+
+ product := dot_product(T1, T2)
+ IF (product == 0) THEN
+  write("the two vectors are orthogonals")
+  END_IF
+ 
+
+ 
